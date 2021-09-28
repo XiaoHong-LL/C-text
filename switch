@@ -1,0 +1,40 @@
+#include <stdio.h>
+int main()
+{
+	double  b;
+	int p,n,a;   
+	a = 500;   //底薪
+	printf("输入员工这个月的销售额：\n");
+	scanf("%d", &p);
+	if (p % 1000 > 0)
+	{
+		n = p / 1000 + 1;
+	}
+	else
+	{
+		n = p / 1000;
+	}
+	switch (n)
+	{
+	case 0:
+	case 1:
+	case 2:
+		b = a;
+		break;
+	case 3:
+	case 4:
+	case 5:
+		b = a + p * 0.08;
+		break;
+	case 6:
+	case 7:
+	case 8:
+	case 9:
+	case 10:
+		b = a + p * 0.1;		
+		break;
+	default:
+		b = a + p * 0.12;
+	}
+	printf("该员工的工资是:%.2lf元\n", b);
+}
